@@ -5,6 +5,7 @@ const routes = require('./routes');
 const errorHandlers = require('./middlewares/errorHandlers');
 const logger = require('./middlewares/log');
 
+app.set('view engine', 'ejs');
 app.use(logger.logger);
 app.use(express.static('public'));
 

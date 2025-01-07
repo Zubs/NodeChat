@@ -1,5 +1,5 @@
 const index = (req, res) => {
-    res.send("Index Page");
+    res.render("index", { title: "NodeChat" });
 };
 
 const login = (req, res) => {
