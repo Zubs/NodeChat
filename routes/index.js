@@ -3,7 +3,7 @@ const index = (req, res) => {
 };
 
 const login = (req, res) => {
-    res.send("Login Page");
+    res.render("login", { title: "Login" });
 };
 
 const loginProcess = (req, res) => {
@@ -11,7 +11,7 @@ const loginProcess = (req, res) => {
 };
 
 const chat = (req, res) => {
-    res.send("Chat Page");
+    res.render("chat", { title: "Chat" });
 };
 
 module.exports = {
