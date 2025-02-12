@@ -1,5 +1,11 @@
 const index = (req, res) => {
-    res.render("index", { title: "NodeChat" });
+    res.cookie('IndexCookie', 'This was set from Index');
+
+    res.render("index", {
+        title: "HomePage",
+        cookie: JSON.stringify(req.cookies),
+        session: JSON.stringify(req.session)
+    });
 };
 
 const login = (req, res) => {

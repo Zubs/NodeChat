@@ -5,12 +5,16 @@ const routes = require('./routes');
 const errorHandlers = require('./middlewares/errorHandlers');
 const logger = require('./middlewares/log');
 const partials = require('express-partials');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
 
 app.set('view engine', 'ejs');
 app.use(logger.logger);
 app.use(express.static('public'));
 app.use(partials());
 app.set('view options', { defaultLayout: 'layout' });
+app.use(cookieParser());
+app.use(session({ secret: 'secret' }));
 
 app.get('/', routes.index);
 app.get('/login', routes.login);
